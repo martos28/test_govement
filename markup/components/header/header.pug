@@ -1,0 +1,36 @@
+mixin header(data)
+  header.header  
+    .header-left
+      a(href="").logo
+        img(src="%=static=%img/general/header_logo.png", alt="логотип")
+      
+      .top-arrows
+        button(type="button").top-arrows__btn
+          img(src="%=static=%img/general/header_arrow_left.png", alt="система 1").top-arrows__icon
+        button(type="button").top-arrows__btn
+          img(src="%=static=%img/general/header_arrow_right.png", alt="система 2").top-arrows__icon
+      h1.header-h1 #{info}
+
+    nav.top-nav
+      input(type="radio" id="today" checked name="days").top-nav__box
+      label(for="today").top-nav__btn.js_html_back Сегодня
+      input(type="radio" id="d3" name="days").top-nav__box
+      label(for="d3" data-urljs="https://gk-grad.ru/tech/jsson.json").top-nav__btn.js_json 3 дня
+      input(type="radio" id="d5" name="days").top-nav__box 
+      label(for="d5" data-urljs="https://gk-grad.ru/tech/jsson5.json").top-nav__btn.js_json 5 дней
+      input(type="radio" id="d7" name="days").top-nav__box
+      label(for="d7").top-nav__btn 7 дней
+      
+    .drop-menu
+        img(src="%=static=%img/general/account_profile.png", alt="arrow" width="14" height="13").drop-menu__active
+        img(src="%=static=%img/general/account_arrow.png", width="10" height="6" alt="face").drop-menu__arrow
+        
+      
+    //- picture.galery-house__picture
+    //-   source(type='image/webp' srcset='%=static=%img/general/ho1.jpg')
+    //-   source(type='image/jpeg' srcset='%=static=%img/general/ho1.jpg')
+    //-   img(src='%=static=%img/general/ho1.jpg' alt='Квартира')
+    
+
+
+

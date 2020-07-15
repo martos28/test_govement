@@ -1,0 +1,26 @@
+mixin footer(data)
+  footer.footer
+    .container
+      .footer-flex
+        .copyr ©2019
+        nav.footer-nav
+          ul.footer-list 
+            li.footer-list__item
+              a(href="#").footer-list__link Home
+            li.footer-list__item
+              a(href="#").footer-list__link Explore
+            li.footer-list__item
+              a(href="#").footer-list__link Privacy Policy
+            li.footer-list__item
+              a(href="#").footer-list__link Term & Conditions 
+        ul.socials
+          li.socials__itm
+            a(href="#").socials__link 
+              != pugHelpers.Icon.call(locals, {iconName: 'ffacebook', className: 'socials__vector', iconWidth: '28', iconHeight: '28'})
+          li.socials__itm 
+            a(href="#").socials__link 
+              != pugHelpers.Icon.call(locals, {iconName: 'ttwitter', className: 'socials__vector', iconWidth: '30', iconHeight: '30'})
+
+          
+
+

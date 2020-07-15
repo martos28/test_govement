@@ -1,0 +1,22 @@
+block variables
+
+doctype html
+html(class="no-js", lang="ru")
+    include ../components/head/head.pug
+    include ../components/header/header.pug
+    - var info = "Информационная система"
+    head
+        +head(head.defaults)
+    body.body-gradient
+        |%=symbols=%
+        //.pixelp 
+        .container
+            //-.pixelp
+            
+            block content
+            
+        script(src='https://polyfill.io/v3/polyfill.min.js?version=3.52.1')
+
+        block scripts
+        script(src='%=static=%js/main%=hash=%%=min=%.js')
+        

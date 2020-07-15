@@ -1,0 +1,46 @@
+/* Your custom fonts here */
+
+/* Example
+
+@font-face {
+    font-family: 'CustomFont';
+    src: url('../fonts/Custom-Font.eot');
+    src: url('../fonts/Custom-Font.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Custom-Font.woff') format('woff'),
+         url('../fonts/Custom-Font.svg#custom_font') format('svg');
+    font-weight: 400;       // For normal width. It could has another value   
+    font-style: normal;     // Also could has another value
+    }
+
+
+// Var for using custom font
+$CustomFont: 'CustomFont', Helvetica, Arial, sans-serif;
+*/
+
+
+@font-face {
+    font-family: 'Proxima Nova Rg';
+    src: local('Proxima Nova Regular'), local('ProximaNova-Regular'),
+        url('../fonts/subset-ProximaNova-Regular.woff2') format('woff2'),
+        url('../fonts/subset-ProximaNova-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Proxima Nova Rg';
+    src: local('Proxima Nova Bold'), local('ProximaNova-Bold'),
+        url('../fonts/subset-ProximaNova-Bold.woff2') format('woff2'),
+        url('../fonts/subset-ProximaNova-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+
+
+
+

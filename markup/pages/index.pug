@@ -1,0 +1,255 @@
+
+extends template
+ 
+block variables
+    -var pagestyle=""
+block scripts
+    
+    //- script(src='%=static=%js/separate-js/tippy.js')
+block content
+    
+    +header()
+    .main-layout
+      aside.left-side.js_leftSide
+        nav 
+          ul.left-menu
+            li.left-menu__item 
+              a(href="#").left-menu__link
+                img(src="%=static=%img/general/menu_1.png", alt="ИЗБРАННОЕ" width="24" height="24").left-menu__icon
+                span.left-menu__text ИЗБРАННОЕ
+            li.left-menu__item.left-menu__item_active 
+              a(href="#").left-menu__link
+                img(src="%=static=%img/general/menu_2.png", alt="ИСПОЛНИТЕЛЬСКАЯ ДИСЦИПЛИНА" width="22" height="24").left-menu__icon
+                span.left-menu__text ИСПОЛНИТЕЛЬСКАЯ ДИСЦИПЛИНА
+            li.left-menu__item
+              a(href="#").left-menu__link
+                img(src="%=static=%img/general/menu-3.png", alt="ЗАКОНОПРОЕКТНАЯ деятельность" width="25" height="24").left-menu__icon
+                span.left-menu__text ЗАКОНОПРОЕКТНАЯ деятельность
+            li.left-menu__item 
+              a(href="#").left-menu__link
+                img(src="%=static=%img/general/menu-4.png", alt="ОПЕРАТИВНЫЕ СОВЕЩАНИЯ ПРЕДСЕДАТЕЛЯ ПРАВИТЕЛЬСТВА РФ" width="28" height="28").left-menu__icon
+                span.left-menu__text ОПЕРАТИВНЫЕ СОВЕЩАНИЯ ПРЕДСЕДАТЕЛЯ ПРАВИТЕЛЬСТВА РФ
+            li.left-menu__item 
+              a(href="#").left-menu__link
+                img(src="%=static=%img/general/menu-5.png", alt="ИСПОЛНЕНИЕ НАЦИОНАЛЬНЫХ ПРОЕКТОВ" width="26" height="26").left-menu__icon
+                span.left-menu__text ИСПОЛНЕНИЕ НАЦИОНАЛЬНЫХ ПРОЕКТОВ
+        .show-menu.jsToggleMenu 
+            img(src="%=static=%img/general/menu-6.png", alt="Показать меню").left-menu__icon
+            | скрыть меню
+      main.content
+        .tasks-wrap
+          .task
+            .task__total
+              h3.task__main-title Всего задач
+              span.task__number-totals 5 653
+            article.task__box
+              .task__box-total
+                p.task__box-name Поручения
+                .task__box-all-numbers 3 456
+              .task__fx-row
+                  .task__col.task__col_w44p
+                    .task__name-wrap-small
+                      p.task__characteristic-small Президент РФ
+                      .task__number-small 1 234
+                    .task__progress
+
+                  .task__col.task__col_full-w
+                    .task__name-wrap-small
+                      p.task__characteristic-small Предсдатель Правительства РФ
+                      .task__number-small 2 222 
+                    .task__progress
+            article.task__box
+              .task__box-total
+                p.task__box-name Особый контроль
+                .task__box-all-numbers 3 456
+              .task__fx-row
+                  .task__col.task__col_auto-w
+                    .task__name-wrap-small
+                      p.task__characteristic-small Коронавирус
+                      .task__number-small 567
+                    .task__progress
+
+                  .task__col.task__col_w44p
+                    .task__name-wrap-small
+                      p.task__characteristic-small Предсдатель Правительства РФ
+                      .task__number-small 456
+                    .task__progress
+                  .task__col.task__col_w33p
+                    .task__name-wrap-small
+                      p.task__characteristic-small Послание Президента РФ
+                      .task__number-small 456 
+                    .task__progress
+            article.task__box
+              .task__box-total
+                p.task__box-name Подготовка НПА
+                .task__box-all-numbers 1 234
+              .task__fx-row
+                  .task__col.task__col_auto-w
+                    .task__name-wrap-small
+                    .task__progress.task__progress_w62p
+            article.task__box
+              .task__box-total
+                p.task__box-name Национальные проекты
+                .task__box-all-numbers 567
+              .task__fx-row
+                  .task__col.task__col_auto-w
+                    .task__name-wrap-small
+                    .task__progress.task__progress_w30p 
+          .task
+            .task__total
+              h3.task__main-title.task__main-title_red Не исполнено
+              span.task__number-totals.task__number-totals_red 10 
+            article.task__box
+              .task__box-total
+                p.task__box-name Поручения
+                .task__box-all-numbers.task__box-all-numbers_red 3
+              .task__fx-row
+                  .task__col.task__col_w44p
+                    .task__name-wrap-small
+                      p.task__characteristic-small Президент РФ
+                      .task__number-small.task__number-small_red 1
+                    .task__progress.task__progress_bg-red
+
+                  .task__col.task__col_full-w
+                    .task__name-wrap-small
+                      p.task__characteristic-small Предсдатель Правительства РФ
+                      .task__number-small.task__number-small_red 1 
+                    .task__progress.task__progress_bg-red
+            article.task__box
+              .task__box-total
+                p.task__box-name Особый контроль
+                .task__box-all-numbers.task__box-all-numbers_red 2
+              .task__fx-row
+                  .task__col.task__col_auto-w
+                    .task__name-wrap-small
+                      p.task__characteristic-small Коронавирус
+                      .task__number-small.task__number-small_red 1
+                    .task__progress.task__progress_bg-red
+
+                  .task__col.task__col_w44p
+                    .task__name-wrap-small
+                      p.task__characteristic-small Предсдатель Правительства РФ
+                      .task__number-small.task__number-small_red 2
+                    .task__progress.task__progress_bg-red
+                  .task__col.task__col_w33p
+                    .task__name-wrap-small
+                      p.task__characteristic-small Послание Президента РФ
+                      .task__number-small.task__number-small_red 
+                        img(src="%=static=%img/general/ok_small.png", width="20" alt="")
+                    .task__progress.task__progress_bg-red
+            article.task__box
+              .task__box-total
+                p.task__box-name Подготовка НПА
+                .task__box-all-numbers.task__box-all-numbers_red 2
+              .task__fx-row
+                  .task__col.task__col_auto-w
+                    .task__name-wrap-small
+                    .task__progress.task__progress_bg-red.task__progress_w62p
+            article.task__box
+              .task__box-total
+                p.task__box-name Национальные проекты
+                .task__box-all-numbers.task__box-all-numbers_red 3
+              .task__fx-row
+                  .task__col.task__col_auto-w
+                    .task__name-wrap-small
+                    .task__progress.task__progress_bg-red
+
+        .my-slider-wrap
+          .wrp
+            .my-slider
+              .wrp
+                .slides
+                  p.slides__title Голикова Татьяна <br> Алексеевна 
+                  .slides__row
+                    .slides__num 7
+                    .slides__picture-box 
+                      picture
+                        source(srcset='%=static=%img/general/user_golikova.webp' type='image/webp')
+                        source(srcset='%=static=%img/general/user_golikova.png' type='image/png')
+                        img.slides__image(src='%=static=%img/general/user_golikova.png' alt='Голикова Татьяна Алексеевна' width='120').slides__image
+              .wrp
+                .slides
+                  p.slides__title Хуснуллин Марат <br> Шакирзянович
+                  .slides__row
+                    .slides__num 6
+                    .slides__picture-box 
+                      img(src="%=static=%img/general/user_husnullin.png", width="120" alt="Хуснуллин Марат Шакирзянович").slides__image
+              .wrp
+                .slides
+                  p.slides__title Белоусов Андрей <br> Рэмович
+                  .slides__row
+                    .slides__num 5
+                    .slides__picture-box 
+                      img(src="%=static=%img/general/user_belousov.png", width="120" alt="Белоусов Андрей Рэмович").slides__image
+              .wrp
+                .slides
+                  p.slides__title Григоренко Дмитрий <br> Юрьевич
+                  .slides__row
+                    .slides__num 1
+                    .slides__picture-box 
+                      img(src="%=static=%img/general/user_grigorenko.png", width="120" alt="Григоренко Дмитрий Юрьевич").slides__image
+
+              .wrp
+                .slides
+                  p.slides__title Борисов Юрий <br> Иванович
+                  .slides__row
+                    .slides__num 
+                      img(src="%=static=%img/general/ok_big.png", alt="" width="43")
+                    .slides__picture-box.slides__picture-box_blue  
+                      img(src="%=static=%img/general/user_borisov.png", width="120" alt="Борисов Юрий Иванович").slides__image
+
+              .wrp
+                .slides
+                  p.slides__title Абрамченко Виктория <br> Валериевна
+                  .slides__row
+                    .slides__num 
+                      img(src="%=static=%img/general/ok_big.png", alt="" width="43")
+                    .slides__picture-box.slides__picture-box_blue 
+                      img(src="%=static=%img/general/user_abramchenko.png", width="120" alt="Абрамченко Виктория Валериевна").slides__image
+              .wrp
+                .slides
+                  p.slides__title Борисов Юрий <br> Иванович
+                  .slides__row
+                    .slides__num 
+                      img(src="%=static=%img/general/ok_big.png", alt="" width="43")
+                    .slides__picture-box.slides__picture-box_blue  
+                      img(src="%=static=%img/general/user_borisov.png", width="120" alt="Борисов Юрий Иванович").slides__image
+              .wrp
+                .slides
+                  p.slides__title Абрамченко Виктория <br> Валериевна
+                  .slides__row
+                    .slides__num 
+                      img(src="%=static=%img/general/ok_big.png", alt="" width="43")
+                    .slides__picture-box.slides__picture-box_blue 
+                      img(src="%=static=%img/general/user_abramchenko.png", width="120" alt="Абрамченко Виктория Валериевна").slides__image
+              .wrp
+                .slides
+                  p.slides__title Григоренко Дмитрий <br> Юрьевич
+                  .slides__row
+                    .slides__num 1
+                    .slides__picture-box 
+                      img(src="%=static=%img/general/user_grigorenko.png", width="120" alt="Григоренко Дмитрий Юрьевич").slides__image
+              .wrp
+                .slides
+                  p.slides__title Белоусов Андрей <br> Рэмович
+                  .slides__row
+                    .slides__num 5
+                    .slides__picture-box 
+                      img(src="%=static=%img/general/user_belousov.png", width="120" alt="Белоусов Андрей Рэмович").slides__image
+              .wrp
+                .slides
+                  p.slides__title Хуснуллин Марат <br> Шакирзянович
+                  .slides__row
+                    .slides__num 6
+                    .slides__picture-box 
+                      img(src="%=static=%img/general/user_husnullin.png", width="120" alt="Хуснуллин Марат Шакирзянович").slides__image
+              .wrp
+                .slides
+                  p.slides__title Голикова Татьяна <br> Алексеевна 
+                  .slides__row
+                    .slides__num 7
+                    .slides__picture-box 
+                      picture
+                        source(srcset='%=static=%img/general/user_golikova.webp' type='image/webp')
+                        source(srcset='%=static=%img/general/user_golikova.png' type='image/png')
+                        img.slides__image(src='%=static=%img/general/user_golikova.png' alt='Голикова Татьяна Алексеевна' width='120').slides__image
