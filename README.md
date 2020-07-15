@@ -8,7 +8,16 @@ English description | <a href="README_RU.md">Описание на русско�
 
 
 
-REDSOFT TEST
+ TEST
 
 TARS is a builder for modern frontend of any complexity, which is based on [Gulp.js](http://gulpjs.com/). It facilitates and accelerates process of web-development. TARS will be suitable for teams and individual developers. It solves the most routine cases associated with web-development and brings you more pleasure from work.
+
+Подробное описание [сборщика] (https://github.com/tars/tars-cli/blob/master/README_RU.md)
+Весть готовый html js в builds, в серваке запуститься.
+Исходники в markup, там и pug и scss.
+js в markup\static\js\plugins.
+
+По слайдеру, у него есть недочеты при работе с Запросами с сервера, но можно устранить, переделать чуть или сразу slick слайдер заюзать.
+Может и не критично, просто нормально рефреш не может следать.
+
 
