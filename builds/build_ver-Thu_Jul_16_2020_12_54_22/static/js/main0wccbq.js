@@ -1584,6 +1584,8 @@ var btnShowSide = document.querySelector(".jsToggleMenu ");
 var asideSelector = document.querySelector(".js_leftSide");
 var btnBackHtml = document.querySelector(".js_html_back");
 var results = document.querySelector('.my-slider');
+var elTag = document.querySelector(".my-slider-wrap");
+var backupHtml = results.innerHTML;
 
 function showMenu() {
   asideSelector.classList.toggle('active');
@@ -1607,11 +1609,18 @@ var slider = tns({
     }
   }
 });
-var backupHtml = results.innerHTML; //console.log(backupHtml);
+console.log(backupHtml);
 
 function htmlBack() {
-  results.innerHTML = "";
-  results.innerHTML = backupHtml; //slider.rebuild();
+  elTag.innerHTML = "";
+  var divnew = document.createElement("div");
+  divnew.classList.add("my-slider"); //divnew.innerHTML = htmCont;
+
+  elTag.appendChild(divnew);
+  var sliderChild = elTag.querySelector(".my-slider");
+  console.log(sliderChild.classList);
+  sliderChild.innerHTML = backupHtml;
+  slider.rebuild();
 }
 
 var summJson = 0;
@@ -1628,10 +1637,17 @@ var getDataServ = function getDataServ(url) {
   } else {
     var data = JSON.parse(r.responseText);
     summJson = data.length;
+    elTag.innerHTML = "";
+    var divnew = document.createElement("div");
+    divnew.classList.add("my-slider"); //divnew.innerHTML = htmCont;
+
+    elTag.appendChild(divnew);
 
     for (var i = 0; i < data.length; i++) {
-      results.innerHTML += " <div class=\"wrp tns-item ".concat(i < 6 ? "tns-slide-active" : "tns-slide-nonactive", "\" id=\"tns1-item").concat(i, "\">\n          <div class=\"slides\">\n            <p class=\"slides__title\">").concat(data[i].name, "</p>\n            <div class=\"slides__row\">\n              <div class=\"slides__num\">").concat(data[i].number, "</div>\n              <div class=\"slides__picture-box\"> <img class=\"slides__image\" src=\"").concat(data[i].imageUrl, "\" width=\"120\" alt='").concat(data[i].name, "'></div>\n            </div>\n          </div>\n        </div>");
+      divnew.innerHTML += "<div class=\"wrp tns-item ".concat(i < 6 ? "tns-slide-active" : "tns-slide-nonactive", "\" id=\"tns1-item").concat(i, "\">\n          <div class=\"slides\">\n            <p class=\"slides__title\">").concat(data[i].name, "</p>\n            <div class=\"slides__row\">\n              <div class=\"slides__num\">").concat(data[i].number, "</div>\n              <div class=\"slides__picture-box\"> <img class=\"slides__image\" src=\"").concat(data[i].imageUrl, "\" width=\"120\" alt='").concat(data[i].name, "'></div>\n            </div>\n          </div>\n        </div>");
     }
+
+    slider.rebuild();
   }
 
   r.onreadystatechange = function () {
@@ -1643,11 +1659,9 @@ var btnGetJSON = _toConsumableArray(document.querySelectorAll(".js_json"));
 
 btnGetJSON.map(function (box2) {
   box2.addEventListener("click", function (showtabs) {
-    var url = box2.dataset.urljs; //to do - create new div and rebild in new or slick slider
-    //slider.destroy();
-
+    var url = box2.dataset.urljs;
     results.innerHTML = "";
-    getDataServ(url); //slider = slider.rebuild();
+    getDataServ(url);
   });
 });
 "use strict";
